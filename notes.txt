@@ -1,0 +1,13 @@
+Communication flow:
+
+Enrollment:
+(client --> server) <uid> <password>: get secret
+(server --> client) authentication failure, please reconnect and enroll
+                    OR
+                    authentication success, secret is: <secret-text>
+Authentication:
+(client --> server) <uid> <password>: enroll
+(server --> client) enrollment success
+
+The protocol is much simpler now. Make sure that you disallow/replace any spaces
+in username or password. Colons also need to be disallowed/replaced.
